@@ -31,20 +31,57 @@
         console.log("Getting form values")
         SecretPhrase = document.getElementById("secretPhrase").value
         Phrase = document.getElementById("phrase").value
-        out = document.getElementById("result")
-    
-        if(SecretPhrase == Phrase){
-            correct++;
-            alert("Access allowed");
-            out.innerHTML = "Correct : " + correct;
+        if(console==phrase)
+    {
+        
+        alert("Access allowed")
+        correct=correct+1;
+    }
+    else{
+        wrong++;
+        alert("Access denied")
+        if(wrong>=3)
+        {
+            accountLocked()
         }
-        else{
-            wrong++;
-            alert("Access denied");
-            out.innerHTML = "Wrong : " + wrong;
+    }
+    out = document.getElementById("result")
+    
+        out.innerHTML = "Correct: "+correct +" Wrong: "+ wrong  
+    
+}
+function accountLocked()
+{
+    alert("Account Locked")
+}
+    </script>
+
+
+            
+
+     <br><br>
+     <div>
+       <img src="Tiger.jpg" id="img1" onclick="newImage()" height="200" width="200">
+</div>
+<script>
+    usingImage = 1
+    function newImage() {
+        switch (usingImage) {
+            case 1:
+                document.getElementById("img1").src = "Tiger.jpg"
+                usingImage = usingImage + 1
+                break
+            case 2:
+                document.getElementById("img1").src = "Ostrich.jpg"
+                usingImage = usingImage + 1
+                break
+            case 3:
+            document.getElementById("img1").src = "Dog.jpg"
+                usingImage = 1
+                break
+
         }
     }
     </script>
-    
     </body>
     </html> 
